@@ -30,27 +30,43 @@ var textToWrite = "";
 
 function gerarArquivo() {
 
+
+
     var dataCabecalho = document.getElementById("dataCabecalho").value;
-    var numeroDocumento = document.getElementById("numeroDocumento").value;
-    var valorTitulo = document.getElementById("valorTitulo").value;
-    var valorPagoTitulo = document.getElementById("valorPagoTitulo").value;
-    var DataVencimentoTitulo = document.getElementById("DataVencimentoTitulo").value;
+
 
 
     var textToWrite = "02RETORNO01COBRANCA       00000000000005469645INTERBELLE COMERCIO DE PRODUTO237BRADESCO       " + dataCabecalho + "0160000000022                                                                                                                                                                                                                                                                          " + dataCabecalho + "         000001\r\n";
 
+    var tb = document.getElementById("tbTitulos");
+
     for (var i = 1; i <= totalLinhas; i++) {
         var nsr = i + 1;
-        textToWrite += "102111370510001860000009030990003965900000000000000000" + numeroDocumento + "00000000000" + numeroDocumento + "0000000000000000000000000090605012200" + numeroDocumento + "00000000000" + numeroDocumento + "0" + DataVencimentoTitulo + "" + valorTitulo + "23704151  000000000000000000000000000000000000000000000000000000000000000000000000000000" + valorPagoTitulo + "00000000000000000000000000   050122             00000000000000                                                                  00000" + nsr + "\r\n";
+
+        var row = tb.rows[i];
+
+        console.log(row.cells[1].innerHTML);
+
+        var numeroDocumento = row.cells[1].innerHTML;
+        var valorTitulo = row.cells[2].innerHTML;
+        var valorPagoTitulo = row.cells[3].innerHTML;
+        var DataVencimentoTitulo = row.cells[4].innerHTML;
+
+
+        textToWrite += "102111370510001860000009030990003965900000000000000000" + numeroDocumento + "00000000000" + numeroDocumento + "0000000000000000000000000090605012200" + numeroDocumento + "00000000000" + numeroDocumento + "0" + DataVencimentoTitulo + "" + valorTitulo + "23704151  000000000000000000000000000000000000000000000000000000000000000000000000000000" + valorPagoTitulo + "00000000000000000000000000   050122             00000000000000                                                                  " + geraNsr(nsr++) + "\r\n";
     }
-
-
-
-
 
     for (var i = 1; i <= 1; i++) {
         var nsrFinal = nsr + 1;
-        textToWrite += "9201237          000000020000000002608600000420          00000000000000000000000026086000020008458914800000200000002608600000000000000000000000000000000000000000000000000000000000000000000                                                                                                                                                                              00000000000000000000000         00000" + nsrFinal + "\r\n";
+        textToWrite += "9201237          000000020000000002608600000420          00000000000000000000000026086000020008458914800000200000002608600000000000000000000000000000000000000000000000000000000000000000000                                                                                                                                                                              00000000000000000000000         " + geraNsr(nsr++) + "\r\n";
+    }
+
+    function geraNsr(nsr) {
+        nsr = nsr.toString();
+        while (nsr.length < 6) {
+            nsr = "0" + nsr;
+        }
+        return nsr;
     }
 
 

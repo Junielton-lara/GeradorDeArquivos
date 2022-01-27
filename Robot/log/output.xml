@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20220127 08:17:45.655" rpa="false" schemaversion="2">
+<suite id="s1" name="Webautomation" source="C:\Automacao\Projetos\Gerar aquivo de retorno\GeradorDeArquivos\Robot\tests\webautomation.robot">
+<test id="s1-t1" name="Caso de Teste 01: Gerar arquivosde retorno">
+<kw name="Abrir navegador" library="hooks" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220127 08:17:45.845" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220127 08:17:45.844" endtime="20220127 08:17:46.954"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220127 08:17:46.954" endtime="20220127 08:17:47.071"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:45.844" endtime="20220127 08:17:47.072"/>
+</kw>
+<kw name="Dado que acesso a pagina" library="kws_webautomation">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220127 08:17:47.075" level="INFO">Opening url 'file:///C:/Automacao/Projetos/Gerar%20aquivo%20de%20retorno/GeradorDeArquivos/Gerador%20de%20arquivo%20de%20retorno/gerar-arquivo-Retorno.html'</msg>
+<status status="PASS" starttime="20220127 08:17:47.075" endtime="20220127 08:17:47.221"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${HOME.TITLE_PAGE_HOME}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220127 08:17:47.227" level="INFO">Page title is 'Gerador de arquivo de retorno'.</msg>
+<status status="PASS" starttime="20220127 08:17:47.221" endtime="20220127 08:17:47.227"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:47.073" endtime="20220127 08:17:47.227"/>
+</kw>
+<kw name="Quando informo os titulos" library="kws_webautomation">
+<for flavor="IN RANGE">
+<var>${COUNT}</var>
+<value>0</value>
+<value>7</value>
+<iter>
+<var name="${COUNT}">0</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:47.230" level="INFO">Typing text '12225352' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:47.229" endtime="20220127 08:17:47.316"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:47.317" level="INFO">Typing text '0000000000914' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:47.316" endtime="20220127 08:17:47.393"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:47.394" level="INFO">Typing text '0000000000914' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:47.393" endtime="20220127 08:17:47.464"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:47.465" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:47.464" endtime="20220127 08:17:47.514"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:17:49.528" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:47.514" endtime="20220127 08:17:49.528"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:17:49.634" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-95.png"&gt;&lt;img src="selenium-screenshot-95.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:17:49.528" endtime="20220127 08:17:49.634"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:17:49.634" endtime="20220127 08:17:49.636"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:17:49.636" endtime="20220127 08:17:49.636"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:47.229" endtime="20220127 08:17:49.636"/>
+</iter>
+<iter>
+<var name="${COUNT}">1</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:49.637" level="INFO">Typing text '12225353' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:49.636" endtime="20220127 08:17:49.689"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:49.690" level="INFO">Typing text '0000000001050' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:49.689" endtime="20220127 08:17:49.740"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:49.741" level="INFO">Typing text '0000000001050' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:49.740" endtime="20220127 08:17:49.810"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:49.811" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:49.810" endtime="20220127 08:17:49.847"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:17:51.866" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:49.847" endtime="20220127 08:17:51.866"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:17:51.949" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-96.png"&gt;&lt;img src="selenium-screenshot-96.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:17:51.866" endtime="20220127 08:17:51.949"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:17:51.950" endtime="20220127 08:17:51.951"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:17:51.951" endtime="20220127 08:17:51.951"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:49.636" endtime="20220127 08:17:51.951"/>
+</iter>
+<iter>
+<var name="${COUNT}">2</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:51.952" level="INFO">Typing text '12225354' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:51.951" endtime="20220127 08:17:52.007"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:52.008" level="INFO">Typing text '0000000001515' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:52.007" endtime="20220127 08:17:52.060"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:52.062" level="INFO">Typing text '0000000001515' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:52.061" endtime="20220127 08:17:52.112"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:52.113" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:52.113" endtime="20220127 08:17:52.141"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:17:54.148" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:52.141" endtime="20220127 08:17:54.148"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:17:54.286" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-97.png"&gt;&lt;img src="selenium-screenshot-97.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:17:54.148" endtime="20220127 08:17:54.287"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:17:54.287" endtime="20220127 08:17:54.288"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:17:54.288" endtime="20220127 08:17:54.288"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:51.951" endtime="20220127 08:17:54.288"/>
+</iter>
+<iter>
+<var name="${COUNT}">3</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:54.289" level="INFO">Typing text '12225355' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:54.288" endtime="20220127 08:17:54.346"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:54.348" level="INFO">Typing text '0000000004050' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:54.346" endtime="20220127 08:17:54.401"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:54.402" level="INFO">Typing text '0000000004050' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:54.401" endtime="20220127 08:17:54.464"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:54.464" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:54.464" endtime="20220127 08:17:54.493"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:17:56.507" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:54.493" endtime="20220127 08:17:56.508"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:17:56.635" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-98.png"&gt;&lt;img src="selenium-screenshot-98.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:17:56.508" endtime="20220127 08:17:56.635"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:17:56.635" endtime="20220127 08:17:56.637"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:17:56.637" endtime="20220127 08:17:56.637"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:54.288" endtime="20220127 08:17:56.637"/>
+</iter>
+<iter>
+<var name="${COUNT}">4</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:56.638" level="INFO">Typing text '12225356' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:56.637" endtime="20220127 08:17:56.712"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:56.713" level="INFO">Typing text '0000000009910' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:56.712" endtime="20220127 08:17:56.787"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:56.788" level="INFO">Typing text '0000000009910' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:56.787" endtime="20220127 08:17:56.860"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:56.860" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:56.860" endtime="20220127 08:17:56.906"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:17:58.906" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:56.906" endtime="20220127 08:17:58.908"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:17:59.022" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-99.png"&gt;&lt;img src="selenium-screenshot-99.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:17:58.908" endtime="20220127 08:17:59.022"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:17:59.022" endtime="20220127 08:17:59.024"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:17:59.024" endtime="20220127 08:17:59.024"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:56.637" endtime="20220127 08:17:59.024"/>
+</iter>
+<iter>
+<var name="${COUNT}">5</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:59.026" level="INFO">Typing text '12225357' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:17:59.024" endtime="20220127 08:17:59.080"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:59.081" level="INFO">Typing text '0000000000999' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:59.080" endtime="20220127 08:17:59.132"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:59.133" level="INFO">Typing text '0000000000999' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:59.132" endtime="20220127 08:17:59.188"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:17:59.189" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:17:59.188" endtime="20220127 08:17:59.218"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:18:01.232" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:17:59.218" endtime="20220127 08:18:01.233"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:18:01.364" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-100.png"&gt;&lt;img src="selenium-screenshot-100.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:18:01.233" endtime="20220127 08:18:01.364"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:18:01.364" endtime="20220127 08:18:01.365"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:18:01.366" endtime="20220127 08:18:01.366"/>
+</kw>
+<status status="PASS" starttime="20220127 08:17:59.024" endtime="20220127 08:18:01.366"/>
+</iter>
+<iter>
+<var name="${COUNT}">6</var>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.NUMERO_TITULO}</arg>
+<arg>${TITULOS[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:18:01.367" level="INFO">Typing text '12225358' into text field 'id=numeroDocumento'.</msg>
+<status status="PASS" starttime="20220127 08:18:01.366" endtime="20220127 08:18:01.427"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_TITULO}</arg>
+<arg>${VALOR_TITULO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:18:01.428" level="INFO">Typing text '0000000000505' into text field 'id=valorTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:18:01.427" endtime="20220127 08:18:01.485"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${HOME.VALOR_PAGO}</arg>
+<arg>${VALOR_PAGO[${COUNT}]}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220127 08:18:01.486" level="INFO">Typing text '0000000000505' into text field 'id=valorPagoTitulo'.</msg>
+<status status="PASS" starttime="20220127 08:18:01.485" endtime="20220127 08:18:01.538"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_ADC_TITULO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:18:01.538" level="INFO">Clicking button 'id=adc_titulo'.</msg>
+<status status="PASS" starttime="20220127 08:18:01.538" endtime="20220127 08:18:01.565"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220127 08:18:03.577" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220127 08:18:01.565" endtime="20220127 08:18:03.577"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220127 08:18:03.702" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-101.png"&gt;&lt;img src="selenium-screenshot-101.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220127 08:18:03.577" endtime="20220127 08:18:03.702"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Estou nno titulo n°: ${TITULOS[${COUNT}]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220127 08:18:03.702" endtime="20220127 08:18:03.703"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${COUNT} == 7</arg>
+<arg>Log</arg>
+<arg>Acabou o loop!!!</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20220127 08:18:03.703" endtime="20220127 08:18:03.703"/>
+</kw>
+<status status="PASS" starttime="20220127 08:18:01.366" endtime="20220127 08:18:03.703"/>
+</iter>
+<status status="PASS" starttime="20220127 08:17:47.228" endtime="20220127 08:18:03.703"/>
+</for>
+<status status="PASS" starttime="20220127 08:17:47.228" endtime="20220127 08:18:03.703"/>
+</kw>
+<kw name="Entao clico em gerar arquivo de retorno" library="kws_webautomation">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${HOME.BTN_GERAR_ARQUIVO}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220127 08:18:03.704" level="INFO">Clicking button 'id=gerar_arquivo'.</msg>
+<status status="PASS" starttime="20220127 08:18:03.704" endtime="20220127 08:18:03.751"/>
+</kw>
+<status status="PASS" starttime="20220127 08:18:03.704" endtime="20220127 08:18:03.751"/>
+</kw>
+<tag>GeradorDeArquivos</tag>
+<status status="PASS" starttime="20220127 08:17:45.843" endtime="20220127 08:18:03.752"/>
+</test>
+<doc>Aqui estarão presentes os cases de testes.</doc>
+<status status="PASS" starttime="20220127 08:17:45.656" endtime="20220127 08:18:03.754"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">GeradorDeArquivos</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Webautomation">Webautomation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

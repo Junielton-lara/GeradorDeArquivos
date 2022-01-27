@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Gerar AFD</title>
+    <title>Gerador de arquivo de retorno</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 
 </head>
@@ -45,12 +45,12 @@
 
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="button" class="btn btn-primary" value="Adicionar titulo" onclick="incluirTitulo(numeroDocumento.value,valorTitulo.value,valorPagoTitulo.value,DataVencimentoTitulo.value)">
+                                <input type="button" class="btn btn-info" id="adc_titulo" value="Adicionar titulo" onclick="incluirTitulo(numeroDocumento.value,valorTitulo.value,valorPagoTitulo.value,DataVencimentoTitulo.value)">
                             </div>
                         </div>
 
                         <div id="gridTitulos">
-                            <table id="tbTitulos" class="table table-danger table-striped">
+                            <table id="tbTitulos" class="table table-success table-hover">
                                 <thead>
                                     <td>Codigo</td>
                                     <td>Número do Titulo</td>
@@ -63,7 +63,7 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-12">
-                                    <input type="button" class="btn btn-primary" value="Gerar arquivo de retorno" onclick="gerarArquivo()" />
+                                    <input type="button" class="btn btn-success" id="gerar_arquivo" value="Gerar arquivo de retorno" onclick="gerarArquivo()" />
                                 </div>
                             </div>
                         </div>

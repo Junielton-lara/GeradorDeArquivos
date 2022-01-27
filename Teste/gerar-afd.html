@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Gerar AFD</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <form class="form-signin my-3">
+
+            <div class="form-group">
+
+                <div id="titulos"></div>
+                <h3>TESTES DE GRIDS</h3>
+
+                <label>Nome</label>
+                <input type="text" name="txtnome">
+                <label>Altura</label>
+                <input type="text" name="txtaltura">
+
+
+                <input type="button" value="INCLUIR TITULO" onclick="incluirTitulo(txtnome.value, txtaltura.value)">
+
+                <input type="button" value="PEGAR VALORES" onclick="pegarValores(txtnome.value, txtaltura.value)">
+
+                <input type="button" value="gerar arquivo" onclick="gerarArquivo(txtnome.value, txtaltura.value)">
+
+            </div>
+
+            <div id="gridTitulos">
+                <table id="tbTitulos" class="table table-danger table-striped">
+                    <thead>
+                        <td>Codigo</td>
+                        <td>Nome</td>
+                        <td>altura</td>
+                    </thead>
+
+                </table>
+            </div>
+
+        </form>
+    </div>
+    <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="./node_modules/popper.js/dist/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./node_modules/moment/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+</body>
+
+</html>
+
+<script src="app.js"></script>
